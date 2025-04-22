@@ -20,8 +20,6 @@ int main() {
     cin >> total_rows;
     cin >> total_cols;
 
-    cout << total_cols;
-
     for (int i = 0; i < total_rows * total_cols; i++) {
         cin >> helper;
         nums.push_back(helper);

@@ -16,24 +16,21 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    i32 participants, budget, hotels, weeks, price, beds, bestPrice = INT_MAX;
-    cin >> participants >> budget >> hotels >> weeks;
+    int p, b, h, w, price, beds, min = INT_MAX;
+    cin >> p >> b >> h >> w;
 
-    for(int h = 0; h < hotels; h++){
+    while(h > 0){
         cin >> price;
-        if (price*participants <= budget){
-            for(int b = 0; b < weeks; b++){
-                cin >> beds;
-                if(beds >= participants){
-                    bestPrice = min(bestPrice,price*participants);
-                }
+        for(int i = w; i > 0; i--){
+            cin >> beds;
+            if (beds < p){
+                continue;
+            }
+            if (min > price * p){
+                min = price * p;
             }
         }
+        h--;
     }
-
-    if (bestPrice != INT_MAX){
-        cout << bestPrice << endl;
-    }else{
-        cout << "stay home" << endl;
-    }
+    cout << (min <= b ? to_string(min) : "stay home") << endl;
 }

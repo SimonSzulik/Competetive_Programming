@@ -13,36 +13,38 @@ typedef uint64_t u64;
 // und los
 
 int main() {
-    int testcases, length, queries, query, buffer;
-    string testcase;
+    int num_of_tests, string_length, query_count;
+    int query, int_skip;
+    string str_skip;
+    cin >> num_of_tests;
 
-    cin >> testcases;
+    while(num_of_tests > 0){
+        cin >> string_length;
+        cin >> query_count;
+        cin >> str_skip;
 
-    while (testcases > 0){
-        cin >> length >> queries >> testcase;
-
-        for(int i = 0; i < queries; i++){
+        for(int i = 0; i < query_count; i++){
             cin >> query;
             switch (query) {
                 case 1:
-                    cout << (length > 0 ? "no" : "yes") << endl;
+                    cout << (string_length > 0 ? "no" : "yes") << endl;
                     break;
                 case 2:
-                    cout << length << endl;
+                    cout << string_length << endl;
                     break;
                 case 3:
-                    cin >> buffer;
-                    length--;
+                    cin >> int_skip;
+                    string_length--;
                     break;
                 case 4:
-                    cin >> buffer >> testcase;
-                    length++;
+                    cin >> int_skip >> str_skip;
+                    string_length++;
                     break;
                 case 5:
-                    cin >> buffer >> buffer;
+                    cin >> int_skip >> int_skip;
                     break;
             }
         }
-        testcases--;
+        num_of_tests--;
     }
 }
