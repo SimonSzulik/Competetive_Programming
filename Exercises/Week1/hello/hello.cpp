@@ -13,11 +13,9 @@ typedef uint64_t u64;
 // und los
 
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
 
     string name;
     cin >> name;
     cout << "Hello "
-         << name << "!" << "!\n";
+         << name << "!\n";
 }

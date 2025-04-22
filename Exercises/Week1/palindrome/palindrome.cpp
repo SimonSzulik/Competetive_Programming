@@ -13,10 +13,7 @@ typedef uint64_t u64;
 // und los
 
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
-    i32 testcases, length, queries, query, buffer;
+    int testcases, length, queries, query, buffer;
     string testcase;
 
     cin >> testcases;
@@ -38,7 +35,7 @@ int main() {
                     length--;
                     break;
                 case 4:
-                    cin >> buffer >> buffer;
+                    cin >> buffer >> testcase;
                     length++;
                     break;
                 case 5:
